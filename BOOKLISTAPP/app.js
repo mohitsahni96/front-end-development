@@ -10,29 +10,6 @@ class Book {
 //UI Class: Handle UI Tasks
 class UI {
   static displayBooks() {
-    //DUMMY  STATIC DATA FOR BOOKS
-    // const storedBooks = [
-    //   {
-    //     title: "BOOK ONE",
-    //     author: "Mohit Sahni",
-    //     isbn: "343434",
-    //   },
-    //   {
-    //     title: "BOOK TWO",
-    //     author: "Mohit Sahni",
-    //     isbn: "343434",
-    //   },
-    //   {
-    //     title: "BOOK THREE",
-    //     author: "Mohit Sahni",
-    //     isbn: "343434",
-    //   },
-    //   {
-    //     title: "BOOK FOUR",
-    //     author: "Mohit Sahni",
-    //     isbn: "343434",
-    //   },
-    // ];
     const books = Store.getBooks();
     //looping through books array
     books.forEach(book => UI.addBookToList(book));
