@@ -6,34 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel=" stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css ">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css">
     <!--materialize cdn:- fancy way of styling UL-->
     <title> My Contacts List </title>
 </head>
 <style>
     body {
         background-color: lightgray;
+        background-image: url('css/images/img.jpg');
+        position: relative;
     }
-    #filterInput {
-        background-color: dimgray;
+    
+    a {
         color: black;
-    }   
-   .collection.with-header .collection-header {
-        background-color: none;    
     }
+    
+    #filterInput {
+        background-color: whitesmoke;
+        color: black;
+    }
+    
+     ::placeholder {
+        color: black;
+    }
+    
+    .collection.with-header .collection-header {
+        background-color: whitesmoke;
+    }
+    
     .collection .collection-item:nth-child(odd) {
         background-color: ghostwhite;
     }
+    
     .collection .collection-item:nth-child(even) {
-        background-color: floralwhite;
+        background-color: lightgray;
     }
 </style>
 
 <body>
     <div class="container ">
-        <h1 class="center-align ">
-            My Contacts List
-        </h1>
-        <input type="text" id="filterInput" placeholder="Search Names.....">
+        <h2 class="center-align ">
+            <i class="fas fa-id-card text-primary"></i> My
+            <span class="text-primary">Contacts</span> List
+        </h2>
+        <input type="text" id="filterInput" placeholder="Search Name Here.....">
         <ul id="names" class="collection with-header">
             <li class="collection-header">
                 <h5>A</h5>
