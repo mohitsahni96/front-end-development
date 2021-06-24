@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=" stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css ">
+    <!--materialize cdn:- fancy way of styling UL-->
+    <title> My Contacts List </title>
+</head>
+<style>
+    body {
+        background-color: lightgray;
+    }
+    #filterInput {
+        background-color: dimgray;
+        color: black;
+    }   
+   .collection.with-header .collection-header {
+        background-color: none;    
+    }
+    .collection .collection-item:nth-child(odd) {
+        background-color: ghostwhite;
+    }
+    .collection .collection-item:nth-child(even) {
+        background-color: floralwhite;
+    }
+</style>
+
+<body>
+    <div class="container ">
+        <h1 class="center-align ">
+            My Contacts List
+        </h1>
+        <input type="text" id="filterInput" placeholder="Search Names.....">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">ADAM </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">ATOM </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">ARUN </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">ABID </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">AAKASH </a>
+            </li>
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">BARRACK </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">BRAD </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">BOOGEY </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">BABY </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">BING </a>
+            </li>
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">CHANDLER</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">CHRIS </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">CAROL </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">CORONA </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">CATLIN </a>
+            </li>
+            <li class="collection-header">
+                <h5>D</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">DAVID </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DAVE </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DANE </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DUDE </a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DEEPAK </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //Get input element from id
+        let filterInput = document.getElementById('filterInput');
+        //Add EventListener(event,function)
+        filterInput.addEventListener('keyup', filterNames);
+
+        //function
+        function filterNames() {
+            //get value of Input
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            //get name ul
+            let ul = document.getElementById('names');
+            //get li from ul
+            let li = ul.querySelectorAll('li.collection-item');
+
+            //loop thorugh collection-item lis
+            for (let i = 0; i < li.length; i++) {
+                //getting current link which we want from <a>
+                let a = li[i].getElementsByTagName('a')[0];
+                //if matches innerHTML will grab whatever inside a tag
+                if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
