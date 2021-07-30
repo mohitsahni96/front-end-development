@@ -1,0 +1,13 @@
+/*now there will be no overlapping of navbar and section items upon changing resolutions*/
+/* pseudo selector : before*/
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+/* input box minimizes to 50% size upon changing resoltion below medium */
+@media(min-width: 768px) {
+    .news-input {
+        width: 50%;
+    }
+}
